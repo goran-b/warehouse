@@ -14,7 +14,6 @@ class RecentPurchases:
             list_recent_purchases= response_recent_purchases_user.json()['purchases']
 
             for x in list_recent_purchases:
-                print(x['productId'])
                 productId=x['productId']
                 get_data_purchases(productId) 
 

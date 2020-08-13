@@ -10,10 +10,9 @@ from rest_framework.exceptions import NotFound
 @api_view()
 def recent_purchases_view(request,pk):
     recent_purchases = []
-    
     username=str(pk)
-    print(username)
     recent_purchases=RecentPurchases(username).__dict__['recent_purchases']
+    recent_purchases = list(dict.fromkeys(recent_purchases))
     if len(recent_purchases)==0:
         raise NotFound('User with username of ' + username + ' was not found!')
     serializer = RecentPurchaseSerializer(recent_purchases,many=True)
