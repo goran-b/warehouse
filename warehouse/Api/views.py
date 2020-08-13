@@ -1,3 +1,20 @@
-from django.shortcuts import render
+from rest_framework.decorators import api_view
+from rest_framework.response import Response
+from .serializers import  RecentPurchaseSerializer
+from .models import RecentPurchase
+from .services import RecentPurchases
+from rest_framework.exceptions import NotFound
 
-# Create your views here.
+
+
+@api_view()
+def recent_purchases_view(request):
+    recent_purchases = []
+    username='Kaleigh_Howe'
+    recent_purchases=RecentPurchases(username).__dict__['recent_purchases']
+    if len(recent_purchases)==0:
+        raise NotFound('User with username of ' + username + ' was not found!')
+    serializer = RecentPurchaseSerializer(recent_purchases,many=True)
+    return Response(serializer.data)
+   
+        
