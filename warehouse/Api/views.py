@@ -8,9 +8,11 @@ from rest_framework.exceptions import NotFound
 
 
 @api_view()
-def recent_purchases_view(request):
+def recent_purchases_view(request,pk):
     recent_purchases = []
-    username='Kaleigh_Howe'
+    
+    username=str(pk)
+    print(username)
     recent_purchases=RecentPurchases(username).__dict__['recent_purchases']
     if len(recent_purchases)==0:
         raise NotFound('User with username of ' + username + ' was not found!')

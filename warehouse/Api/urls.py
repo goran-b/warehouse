@@ -10,5 +10,5 @@ router= routers.DefaultRouter()
 
 urlpatterns = [
     path('', include(router.urls)),
-    path('recent_purchases/', recent_purchases_view, name='recent_purchases_view'),
+    path('recent_purchases/<str:pk>', recent_purchases_view, name='recent_purchases_view'),
 ]
