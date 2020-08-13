@@ -10,7 +10,6 @@ class RecentPurchases:
         
         
         def get_recent_purchases_user(username):
-
             response_recent_purchases_user=requests.get('http://127.0.0.1:4000/api/purchases/by_user/'+ username+'?limit=5')
             list_recent_purchases= response_recent_purchases_user.json()['purchases']
 
