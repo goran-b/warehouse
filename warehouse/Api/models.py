@@ -1,5 +1,4 @@
 from django.db import models
-import requests
 
 class RecentPurchase(object):
     def __init__(self, id, face, price, size, recent):
