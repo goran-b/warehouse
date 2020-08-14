@@ -1,7 +1,7 @@
 from rest_framework.decorators import api_view
 from rest_framework.response import Response
 from .serializers import RecentPurchaseSerializer
-from .services import get_recent_purchases, throw_error_no_user
+from .services import get_recent_purchases
 
 
 @api_view()
