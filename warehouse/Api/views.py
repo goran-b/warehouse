@@ -4,6 +4,8 @@ from .serializers import RecentPurchaseSerializer
 from .services import RecentPurchasesService
 
 
+
+
 @api_view()
 def recent_purchases_view(request, pk):
     username = str(pk)
