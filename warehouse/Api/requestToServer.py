@@ -7,6 +7,13 @@ class SendRequest():
     API_URL = 'http://127.0.0.1:4000/api/'
 
     @classmethod
+    def send_request_users(cls):
+        response = requests.get(f"{cls.API_URL}users")
+        data = response.json()['users']
+        return data
+        
+
+    @classmethod
     def send_request_user_purcheses(cls, username):
         response = requests.get(
             f"{cls.API_URL}purchases/by_user/{username}?limit=5")
