@@ -1,5 +1,10 @@
 from rest_framework import serializers
 
+class UsersSerializer(serializers.Serializer):
+    username = serializers.CharField(max_length=50)
+    email = serializers.EmailField()
+    class Meta:
+        fields = ('username', 'email' )
 
 
 class RecentPurchaseSerializer(serializers.Serializer):

@@ -1,6 +1,14 @@
 from .models import RecentPurchase
 from .requestToServer import SendRequest
 
+class UsersService():
+    users=[]
+
+    @classmethod
+    def get_users(cls):
+        users=SendRequest.send_request_users()
+        return users
+
 
 class RecentPurchasesService():
 
