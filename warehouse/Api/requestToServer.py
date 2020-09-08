@@ -4,7 +4,7 @@ from .errors import Errors
 
 class SendRequest():
 
-    API_URL = 'http://127.0.0.1:4000/api/'
+    API_URL = 'https://warehouse-node-server.herokuapp.com/api/'
 
     @classmethod
     def send_request_users(cls):
