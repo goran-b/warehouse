@@ -1,7 +1,7 @@
 #  Discount Ascii Warehouse
 Backend that add feature from existing rest api 
 
-Live version: https://warehouse-django-server.herokuapp.com/api/users/
+Live version: https://warehouse-django-server.herokuapp.com/api/users
 
 Exam
 
