@@ -61,7 +61,7 @@ Example response:
 
 
 ## Features
-This rest serivs received data from the server(https://github.com/x-team/daw-purchases/blob/master/README.md#api-reference).
+This rest service receives data from the server(https://github.com/x-team/daw-purchases/blob/master/README.md#api-reference).
 There are two endpoints that return the requested data.
 Users: who returns a list of ten generated users and 
 The Popular purchase: that returns an json file with information about the last purchases of a certain user and the name of other users who bought those products.
