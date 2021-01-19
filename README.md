@@ -1,7 +1,9 @@
 #  Discount Ascii Warehouse
-Backend that add feature from existing rest api 
-
+Proxy server made in Django
 Live version: https://warehouse-django-server.herokuapp.com/api/users
+
+## Motivation
+This is an exercise task. It is necessary to create a proxy server that responds to special queries and returns json files. This is the text of the task:
 
 Exam
 
@@ -40,9 +42,113 @@ Example response:
   ...
 ]
 
-What to include in your solution
-Your solution should be a zipped (or gzipped) archive including:
--	all source code required to run the application
--	step-by-step instructions for the reviewer to follow so that they can run your application.
--	any other notes or rationale you think is helpful for the reviewer to consider when grading your solution.
+## Code style
 
+[![js-standard-style](https://img.shields.io/badge/code%20style-standard-brightgreen.svg?style=flat)](https://github.com/feross/standard)
+ 
+## Screenshots
+
+![Users](https://github.com/goran-b/warehouse/blob/master/screenshot-users.PNG)
+![Popular purchases](https://github.com/goran-b/warehouse/blob/master/screenshot-popular-purchases-by-user.PNG)
+
+
+## Tech/framework used
+
+<b>Built with</b>
+- [Django](https://www.djangoproject.com/)
+- [Django rest framewok](https://www.django-rest-framework.org/)
+
+
+
+## Features
+This rest serivs received data from the server(https://github.com/x-team/daw-purchases/blob/master/README.md#api-reference).
+There are two endpoints that return the requested data.
+Users: who returns a list of ten generated users and 
+The Popular purchase: that returns an json file with information about the last purchases of a certain user and the name of other users who bought those products.
+
+
+## Installation
+The first thing to do is to clone the repository:
+
+```sh
+$ git clone https://github.com/goran-b/warehouse.git
+$ cd warehouse
+```
+
+Create a virtual environment to install dependencies in and activate it:
+
+```sh
+$ virtualenv --no-site-packages env
+$ source env/bin/activate
+```
+
+Then install the dependencies:
+
+```sh
+(env)$ pip install -r requirements.txt
+```
+Note the `(env)` in front of the prompt. This indicates that this terminal
+session operates in a virtual environment set up by `virtualenv`.
+
+Once `pip` has finished downloading the dependencies:
+```sh
+(env)$ cd warehouse
+(env)$ python manage.py runserver
+```
+And navigate to `http://127.0.0.1:8000/api/`.
+
+or live version : https://warehouse-django-server.herokuapp.com/api/
+
+
+## API Reference
+
+### GET users
+
+- response (json):
+
+```
+{
+  "users": [
+    {
+      "username": (string),
+      "email": (string)
+    },
+    ...
+  ]
+}
+```
+
+### GET recent_purchases/:username 
+
+- params:
+  - username (string)
+
+- response (json):
+
+```
+[    
+    {
+        "id": (string),
+        "face": (string),
+        "price": (number),
+        "size": (number),
+        "recent": [
+            (string),
+            (string),
+            ...
+        ]
+    },
+    ...
+]
+```
+
+
+
+
+## Tests
+//to do
+
+
+
+
+MIT © [goran-b]()
